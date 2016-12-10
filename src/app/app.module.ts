@@ -10,6 +10,7 @@ import { GalleryComponent } from './components/pages/gallery/gallery.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { AboutusComponent } from './components/pages/aboutus/aboutus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NotfoundComponent } from './components/pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     HomeComponent,
     GalleryComponent,
     AboutusComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
