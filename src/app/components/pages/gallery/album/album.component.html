@@ -1,0 +1,15 @@
+<div *ngIf="!album">
+  <h1>Loading your album...</h1>
+</div>
+<div *ngIf="album">
+  <h1><a routerLink="/gallery">Gallery</a> > <span [innerHTML]="album.name"></span></h1>
+  <div class="gallery-container">
+    <div class="entry" *ngFor="let image of album.images; let i = index;">
+      <div class="image-container">
+        <a routerLink="{{i}}">
+          <img [src]="image.thumb" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

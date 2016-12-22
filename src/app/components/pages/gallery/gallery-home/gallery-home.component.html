@@ -1,0 +1,15 @@
+<h1>Albums</h1>
+<div class="gallery-container">
+  <div class="entry" *ngFor="let album of albums; let i = index;">
+    <div class="image-container">
+      <a routerLink="{{i}}">
+        <img [src]="album.images[0].thumb" />
+      </a>
+    </div>
+    <h3 class="caption">
+      <a routerLink="{{i}}">
+        <span [innerHTML]="album.name"></span> (<span [innerHTML]="album.images.length"></span>)
+      </a>
+    </h3>
+  </div>
+</div>

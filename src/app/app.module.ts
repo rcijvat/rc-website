@@ -11,6 +11,9 @@ import { AppRoutingModule }     from './app-routing.module';
 import { AboutusComponent } from './components/pages/aboutus/aboutus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/pages/notfound/notfound.component';
+import {GalleryService} from './components/pages/gallery/gallery.service';
+import { AlbumComponent } from './components/pages/gallery/album/album.component';
+import { GalleryHomeComponent } from './components/pages/gallery/gallery-home/gallery-home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { NotfoundComponent } from './components/pages/notfound/notfound.componen
     GalleryComponent,
     AboutusComponent,
     NavbarComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AlbumComponent,
+    HomeComponent,
+    GalleryHomeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +35,9 @@ import { NotfoundComponent } from './components/pages/notfound/notfound.componen
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    GalleryService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

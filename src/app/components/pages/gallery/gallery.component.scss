@@ -1,0 +1,27 @@
+/deep/ .gallery-container {
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  display: -webkit-box;
+  display: flex;
+
+  div.entry {
+    position: relative;
+    -ms-flex: auto;
+    flex: auto;
+    width: 200px;
+    margin: .5vw;
+    text-align: center;
+
+    .image-container {
+      max-height: 200px;
+      overflow: hidden;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
