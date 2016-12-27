@@ -12,8 +12,11 @@ import { AboutusComponent } from './components/pages/aboutus/aboutus.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NotfoundComponent } from './components/pages/notfound/notfound.component';
 import {GalleryService} from './components/pages/gallery/gallery.service';
+import {SpanishTrainingService} from './components/pages/spanish-training/spanish-training.service';
 import { AlbumComponent } from './components/pages/gallery/album/album.component';
 import { GalleryHomeComponent } from './components/pages/gallery/gallery-home/gallery-home.component';
+import {ModalModule} from 'ng2-bootstrap';
+import { SpanishTrainingComponent } from './components/pages/spanish-training/spanish-training.component';
 
 @NgModule({
   declarations: [
@@ -27,16 +30,19 @@ import { GalleryHomeComponent } from './components/pages/gallery/gallery-home/ga
     NotfoundComponent,
     AlbumComponent,
     HomeComponent,
-    GalleryHomeComponent
+    GalleryHomeComponent,
+    SpanishTrainingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ModalModule,
     AppRoutingModule
   ],
   providers: [
-    GalleryService
+    GalleryService,
+    SpanishTrainingService
   ],
   bootstrap: [AppComponent]
 })

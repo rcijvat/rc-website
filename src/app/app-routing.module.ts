@@ -10,6 +10,7 @@ import { AboutusComponent }     from './components/pages/aboutus/aboutus.compone
 import { NotfoundComponent }     from './components/pages/notfound/notfound.component';
 import {GalleryHomeComponent} from './components/pages/gallery/gallery-home/gallery-home.component';
 import {AlbumComponent} from './components/pages/gallery/album/album.component';
+import {SpanishTrainingComponent} from './components/pages/spanish-training/spanish-training.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
     ]
   },
   { path: 'aboutus',  component: AboutusComponent },
+  { path: 'spanish-training', component: SpanishTrainingComponent },
   { path: '**',       component: NotfoundComponent }
 ];
 @NgModule({
@@ -28,4 +30,3 @@ const routes: Routes = [
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
-

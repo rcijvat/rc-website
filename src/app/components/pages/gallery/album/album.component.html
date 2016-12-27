@@ -6,10 +6,35 @@
   <div class="gallery-container">
     <div class="entry" *ngFor="let image of album.images; let i = index;">
       <div class="image-container">
-        <a routerLink="{{i}}">
-          <img [src]="image.thumb" />
+        <a href="javascript:void(0);" (click)="showImageModal(i)">
+          <img [src]="image.thumb" [alt]="image.name" />
         </a>
       </div>
     </div>
   </div>
+
+
+  <div bsModal #imageModal="bs-modal" class="modal fade">
+  <div class="modal-dialog modal-lg" *ngIf="album.activeImage">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" (click)="hideImageModal()">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title" [innerHTML]="album.activeImage.name"></h4>
+      </div>
+      <div class="modal-body">
+        <div class="arrow-left">
+          <div class="arrow-bg"></div>
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </div>
+        <div class="arrow-right">
+          <div class="arrow-bg"></div>
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </div>
+        <img [src]="album.activeImage.path" [alt]="album.activeImage.name" />
+      </div> <!-- modal-body -->
+    </div> <!-- modal-content -->
+  </div> <!-- modal-dialog -->
+</div>
 </div>

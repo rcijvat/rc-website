@@ -36,7 +36,7 @@ var galleryUtils = {
     return getFilesFilteredOnStats(root, isDirectory);
   },
   fileExists: function(path) {
-    return Q.nfcall(fs.access, path).then(function() {
+    return Q.nfcall(fs.access, path.replace(' ', '\ ')).then(function() {
       return true;
     }, function() {
       return false;
@@ -48,6 +48,7 @@ var galleryUtils = {
   },
   createThumbnail: function(src, dest, width) {
     logger.info('Creating thumbnail [' + dest + '] from source [' + src + ']');
+    //return Q.nfcall(function() { });
     return Q.nfcall(
       im.resize,
       {

@@ -1,0 +1,20 @@
+<h1>Spanish training</h1>
+
+<div *ngIf="running">
+  <h2 class="pull-right" [innerHTML]="curSeconds + ' seconds'"></h2>
+  <input id="from-spanish" type="radio" name="direction" [ngModel]="direction" value="from-spanish" (ngModelChange)="directionChanged($event)" />
+  <label for="from-spanish">From Spanish</label>
+
+  <input id="to-spanish" type="radio" name="direction" [ngModel]="direction" value="to-spanish" (ngModelChange)="directionChanged($event)" />
+  <label for="to-spanish">To Spanish</label>
+
+  <h3><span [innerHTML]="toTranslate"></span> (Attempt <span [innerHTML]="curTranslation.attempts+1"></span>)</h3>
+  <h5><span [innerHTML]="msg"></span>&nbsp;</h5>
+  <input class="form-control" type="text" [(ngModel)]="curAnswer" (keyup.enter)="submitAnswer()" (keyup.escape)="skipAnswer()"/>
+  <br />
+  <div class="btn btn-default" (click)="skipAnswer()">Skip</div>
+  <div class="btn btn-primary pull-right" (click)="submitAnswer()">Submit</div>
+</div>
+<div *ngIf="!running">
+  <h2>Finished in <span [innerHTML]="curSeconds"></span> seconds!</h2>
+</div>

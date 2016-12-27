@@ -7,6 +7,7 @@
 var path = require('path');
 var fs = require('fs');
 
+var express = require('express');
 var Q = require('q');
 var _ = require('lodash');
 
@@ -15,8 +16,8 @@ var galleryUtils = require('./gallery-utils');
 var Album = require('./album');
 
 
-var galleryPath = path.join(__dirname, '..', '..', 'dist', 'gallery');
-var webRoot = '/gallery/';
+var webRoot = '/gallery-img/';
+var galleryPath = path.join(__dirname, 'gallery');
 var albums = galleryUtils.getDirectories(galleryPath).then(function(dirNames) {
   return _.map(dirNames, function(dirName) {
     return new Album(path.join(galleryPath, dirName), path.join(webRoot, dirName), dirName);
@@ -24,6 +25,8 @@ var albums = galleryUtils.getDirectories(galleryPath).then(function(dirNames) {
 });
 
 function register(app) {
+  app.use(webRoot, express.static(path.join(__dirname, 'gallery')));
+
   app.get('/gallery/albums', function(req, res) {
     albums.then(function(albums) {
       return _.map(albums, function (album) {

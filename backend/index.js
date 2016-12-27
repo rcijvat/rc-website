@@ -12,7 +12,6 @@ var gallery = require('./gallery/gallery');
 var port = 12000;
 var app = express();
 
-console.log(path.join(__dirname, '..', 'dist'));
 app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 gallery.register(app);

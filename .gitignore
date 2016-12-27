@@ -30,4 +30,4 @@ testem.log
 Thumbs.db
 
 #Gallery pics
-/src/gallery
+/backend/gallery/gallery
