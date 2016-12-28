@@ -4,4 +4,4 @@ node_js:
 before_install:
   - npm install -g angular-cli
 install:
-  - npm build-prod
+  - npm run build-prod
