@@ -50,7 +50,7 @@ aproximademente: approximately
 casi: almost
 apenas: barely
 aun: still/even
-peudes: can
+puedes: can
 gente: people
 mira: look
 pareja: pair/couple
